@@ -12,7 +12,7 @@
             "Source\\": "source/"
         },
         "files": [
-            "source/boot/env.php",
+            "source/boot/configs.php",
             "source/boot/funcs.php"
         ]
     },
