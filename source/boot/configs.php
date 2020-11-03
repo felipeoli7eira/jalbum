@@ -11,4 +11,4 @@
      * RESOURCES
     */
 
-    define("CONF_RESOURCES_DIR", "resources");
+    define("CONF_RESOURCES_DIR", "resources/");

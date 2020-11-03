@@ -26,7 +26,13 @@
         }
     }
 
+    /**
+     * PATH
+    */
+
     function resource(string $resource)
     {
-        // $replace = str_replace("|", DIRECTORY_SEPARATOR, $resource);
+        return url(
+            CONF_RESOURCES_DIR . str_replace( "|", DIRECTORY_SEPARATOR, $resource )
+        );
     }

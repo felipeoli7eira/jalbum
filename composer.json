@@ -16,5 +16,7 @@
             "source/boot/funcs.php"
         ]
     },
-    "require": {}
+    "require": {
+        "coffeecode/router": "^1.0"
+    }
 }
