@@ -1,0 +1,20 @@
+{
+    "name": "felipeoli7eira/frete",
+    "authors": [
+        {
+            "name": "Felipe Oliveira",
+            "email": "me.felipeoliveira@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/boot/env.php",
+            "source/boot/funcs.php"
+        ]
+    },
+    "require": {}
+}
