@@ -4,8 +4,18 @@
 
     class App
     {
-        public function home()
+        /**
+         * @var null|array|object $params
+        */
+        protected $params;
+
+        protected function arrayToObject(?array $routeParams = null): void
         {
-            echo "welcome to home";
+            $this->params = (object) $routeParams;
+        }
+
+        public function index(): void
+        {
+            var_dump("welcome to app");
         }
     }

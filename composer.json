@@ -1,5 +1,5 @@
 {
-    "name": "felipeoli7eira/frete",
+    "name": "felipeoli7eira/no_name",
     "authors": [
         {
             "name": "Felipe Oliveira",
@@ -17,6 +17,9 @@
         ]
     },
     "require": {
-        "coffeecode/router": "^1.0"
+        "coffeecode/router": "^1.0",
+        "matthiasmullie/minify": "^1.3",
+        "league/plates": "^3.3",
+        "coffeecode/uploader": "^1.0"
     }
 }
