@@ -13,13 +13,14 @@
         },
         "files": [
             "source/boot/configs.php",
-            "source/boot/funcs.php"
+            "source/boot/funcs.php",
+            "source/boot/minify.php"
         ]
     },
     "require": {
         "coffeecode/router": "^1.0",
         "matthiasmullie/minify": "^1.3",
-        "league/plates": "^3.3",
+        "league/plates": "v4.0.0-alpha",
         "coffeecode/uploader": "^1.0"
     }
 }

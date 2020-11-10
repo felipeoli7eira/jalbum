@@ -1,0 +1,10 @@
+@font-face
+{
+    font-family: Quicksand;
+    src: local(""), url();
+}
+
+*
+{
+    font-family: Quicksand;
+}

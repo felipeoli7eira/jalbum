@@ -2,20 +2,25 @@
 
     namespace Source\App;
 
-    class App
+    class App extends Controller
     {
         /**
          * @var null|array|object $params
         */
         protected $params;
 
+        public function __construct()
+        {
+            parent::__construct("app");
+        }
+
         protected function arrayToObject(?array $routeParams = null): void
         {
             $this->params = (object) $routeParams;
         }
 
-        public function index(): void
+        public function index()
         {
-            var_dump("welcome to app");
+            echo $this->view("index");
         }
     }
