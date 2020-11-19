@@ -6,35 +6,27 @@
 
     $route = new Router( url(), "::" ); // URL Project, Separator
 
-    /**
-     * App Routes
-    */
+    /** App Routes */
 
-    $route->namespace("Source\App");
+    $route->namespace("Source\App\Web");
 
     $route->get("/", "App::index");
-    $route->get("/contato", "App::contact");
-    $route->get("/login", "App::loginGet");
+    $route->get("/login", "App::login");
+    $route->get("/erro/{code}", "App::error");
 
-    /**
-     * Panel Routes
-    */
+    /** Dashboard Routes */
 
-    $route->namespace("Source\App");
+    $route->namespace("Source\App\Dashboard");
 
     $route->get("/dashboard", "DashBoard::index");
 
-    /**
-     * Dispatch Router
-    */
+    /** Dispatch Routes */
 
     $route->dispatch();
 
-    /**
-     * Listen Error
-    */
+    /** Listen Error */
 
     if($route->error())
     {
-        echo "<h1 style=\"text-align: center ; padding: 1rem\">{$route->error()}</h1>";
+        redirect("/erro/{$route->error()}");
     }

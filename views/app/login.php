@@ -29,16 +29,10 @@
         </div>
 
         <nav class="mt-5">
-            <a href="<?= url() ?>" class="btn btn-light">
+            <a href="<?= url_back() ?>" class="btn btn-light">
                 <img src="<?= resource("icons|arrow-left.svg") ?>" alt="voltar" width="15px">
                 voltar
             </a>
         </nav>
     </form>
 </div>
-
-<?php
-
-    var_dump(session()->get("userName"))
-
-?>
