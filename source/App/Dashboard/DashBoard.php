@@ -16,11 +16,13 @@
                 redirect("/login");
             }
 
-            $this->user = Auth::user();
+            $this->auth = Auth::user();
         }
 
         public function index(): void
         {
             echo "<h1>Dashboard</h1>";
+
+            var_dump($this->auth);
         }
     }

@@ -3,6 +3,7 @@
     namespace Source\App\Web;
 
     use Source\App\Controller;
+    use Source\System\Database;
 
     class App extends Controller
     {
