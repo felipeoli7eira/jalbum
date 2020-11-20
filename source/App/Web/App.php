@@ -11,17 +11,20 @@
             parent::__construct("app");
         }
 
-        public function index()
+        public function index(): void
         {
             echo $this->view("index");
         }
 
-        public function login()
+        public function login(): void
         {
             echo $this->view("login");
         }
 
-        public function error($data)
+        /**
+         * @param array|null $data
+        */
+        public function error($data): void
         {
             echo "<h1>Erro na aplicação (". $data["code"] .")</h1>"; // por enquanto
         }

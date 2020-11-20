@@ -9,9 +9,6 @@
                 <a class="nav-link" href="<?= url("projetos") ?>">PROJETOS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= url("contato") ?>">CONTATO</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="#">SOBRE</a>
             </li>
             <li class="nav-item">

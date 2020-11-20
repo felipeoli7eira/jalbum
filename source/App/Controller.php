@@ -2,22 +2,32 @@
 
     namespace Source\App;
 
-    use League\Plates\Engine as PlatesEngine;
+    use League\Plates\Engine;
 
     class Controller
     {
+        /** @var Engine */
         protected $view;
 
-        protected function __construct(string $viewType)
+        /** @var string $vType */
+        protected $vType;
+
+        /**
+         * @param string $vType
+        */
+        protected function __construct(string $vType)
         {
-            /**
-             * $viewType: app || dashboard
-            */
-            $this->view = PlatesEngine::create( CONF_VIEWS_DIR . $viewType, CONF_VIEWS_EXT );
+            $this->view = Engine::create(CONF_VIEWS_DIR, CONF_VIEWS_EXT);
+            $this->vType = $vType;
         }
 
-        public function view(string $viewName, array $viewData = []): string
+        /**
+         * @param string $vName
+         * @param array $vData
+         * @return string
+        */
+        public function view(string $vName, array $vData = []): string
         {
-            return $this->view->render($viewName, $viewData);
+            return $this->view->render("{$this->vType}/{$vName}", $vData);
         }
     }

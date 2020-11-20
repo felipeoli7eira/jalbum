@@ -17,7 +17,7 @@
      * VIEWS
     */
 
-    define("CONF_VIEWS_DIR", __DIR__ . "/../../views/");
+    define("CONF_VIEWS_DIR", __DIR__ . "/../../views");
     define("CONF_VIEWS_EXT", "php");
     define("CONF_DEFAULT_PAGE_TITLE", "***");
     define("CONF_FRAMEWORK_CSS_PATH", "");

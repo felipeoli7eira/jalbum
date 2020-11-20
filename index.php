@@ -4,7 +4,7 @@
 
     use CoffeeCode\Router\Router;
 
-    $route = new Router( url(), "::" ); // URL Project, Separator
+    $route = new Router( url(), "::" );
 
     /** App Routes */
 
