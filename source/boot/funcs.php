@@ -1,6 +1,31 @@
 <?php
 
     /**
+     * ###################
+     * #### VALIDATES ####
+     * ###################
+    */
+
+    /**
+     * @param string $password
+     * @param string $hash
+     * @return bool
+    */
+    function pwd_verify(string $password, string $hash): bool
+    {
+        return password_verify($password, $hash);
+    }
+
+    /**
+     * @param string $email
+     * @return bool
+    */
+    function is_valid_email(string $email): bool
+    {
+        return filter_var($email, FILTER_VALIDATE_EMAIL);
+    }
+
+    /**
      * #############
      * #### URL ####
      * #############
@@ -31,7 +56,7 @@
     */
     function url_back(): string
     {
-        return ( $_SERVER['HTTP_REFERER'] ?? url() );
+        return ($_SERVER['HTTP_REFERER'] ?? url());
     }
 
     /**

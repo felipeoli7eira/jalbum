@@ -12,10 +12,15 @@
     * Class Auth
     * @package Source\Models
     */
-    class Auth
+    class Auth extends Model
     {
         /** @var Source\System\Session */
         private static $session;
+
+        public function __construct()
+        {
+            parent::__construct("users");
+        }
 
         public static function user()
         {
@@ -64,49 +69,42 @@
         //     return true;
         // }
 
-        // /**
-        //  * @param string $email
-        //  * @param string $password
-        //  * @param bool $save
-        //  * @return bool
-        //  */
-        // public function login(string $email, string $password, bool $save = false): bool
-        // {
-        //     if (!is_email($email)) {
-        //         $this->message->warning("O e-mail informado não é válido");
-        //         return false;
-        //     }
+        /**
+         * @param string $email
+         * @param string $password
+         * @return bool
+         */
+        public function login(string $email, string $password)
+        {
+            // $user = (new User())->findByEmail($email);
+            // if (!$user)
+            // {
+            //     return false;
+            // }
 
-        //     if ($save) {
-        //         setcookie("authEmail", $email, time() + 604800, "/");
-        //     } else {
-        //         setcookie("authEmail", null, time() - 3600, "/");
-        //     }
-
-        //     if (!is_passwd($password)) {
-        //         $this->message->warning("A senha informada não é válida");
-        //         return false;
-        //     }
-
-        //     $user = (new User())->findByEmail($email);
-        //     if (!$user) {
-        //         $this->message->error("O e-mail informado não está cadastrado");
-        //         return false;
-        //     }
-
-        //     if (!passwd_verify($password, $user->password)) {
-        //         $this->message->error("A senha informada não confere");
-        //         return false;
-        //     }
-
-        //     if (passwd_rehash($user->password)) {
-        //         $user->password = $password;
-        //         $user->save();
-        //     }
+            // if (!pwd_verify($password, $user->password))
+            // {
+            //     $this->message->error("A senha informada não confere");
+            //     return false;
+            // }
 
         //     //LOGIN
         //     (new Session())->set("authUser", $user->id);
         //     $this->message->success("Login efetuado com sucesso")->flash();
         //     return true;
-        // }
+
+            $user = $this->select()->where("email = :email", [":email" => $email])->get("fetch");
+
+            if(!$user)
+            {
+               return false;
+            }
+
+            if (!pwd_verify($password, $user->password))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }

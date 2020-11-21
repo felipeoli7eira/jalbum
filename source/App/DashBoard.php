@@ -1,6 +1,6 @@
 <?php
 
-    namespace Source\App\Dashboard;
+    namespace Source\App;
 
     use Source\Models\Auth;
 

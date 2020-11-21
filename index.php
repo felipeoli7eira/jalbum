@@ -8,15 +8,16 @@
 
     /** App Routes */
 
-    $route->namespace("Source\App\Web");
+    $route->namespace("Source\App");
 
     $route->get("/", "App::index");
+
     $route->get("/login", "App::login");
+    $route->post("/login", "App::execLogin");
+
     $route->get("/erro/{code}", "App::error");
 
     /** Dashboard Routes */
-
-    $route->namespace("Source\App\Dashboard");
 
     $route->get("/dashboard", "DashBoard::index");
 
